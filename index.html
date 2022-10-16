@@ -11,12 +11,35 @@
         </style>
     </head>
     <body>
-        <header>AWS</header>
+        <header>AWS Amplify 2</header>
         <main>
             <h2>AWS</h2>
-            <p>
-                AWSは面白いよ。
-            </p>
+            <pre>
+フォルダーとファイルを用意して、そのフォルダー内に移動
+git init
+add *
+commit -m "aws"
+
+GitHub のウェブで公開用リポジトリを作成
+[Ripogitories] -> [New}
+Repository name : aws1
+"Public"
+
+git remote add origin https://github.com/msugdr/aws1.git
+git branch -M main
+現在のブランチの名前を変更する。
+デフォルトでは master だが、語感の問題から main に変える動きがある。
+[Create repository]
+
+git push -u origin main
+このコマンドでoriginにマスターブランチをpushし、
+ローカルブランチの上流がorigin masterへと移ることになる
+-u と --set-upstream が同じ意味とのこと。
+このオプションをつけるとローカルリポジトリの現在のブランチの上流を
+origin master に規定したことにる。
+このオプションをつけると、次からは git push だけで上記のコマンドと同じことを実施できる。
+さらに、git pull だけでも git pull origin master と同じ意味になる。
+            </pre>
         </main>
     </body>
 </html>
