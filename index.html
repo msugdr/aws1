@@ -7,18 +7,40 @@
     <head>
         <title>Beggin AWS</title>
         <style>
-            :root {--d: 0;}
+            :root {--d: 100;}
         </style>
     </head>
     <body>
-        <header>AWS Amplify 2</header>
+        <header>AWS Amplify 3</header>
         <main>
-            <h2>Local</h2>
-            <pre>
-フォルダーとファイルを用意して、そのフォルダー内に移動
-git init
-add *
-commit -m "aws"
+            <h2>GitHub</h2>
+            <p>
+コマンド一発でコピーを持ってこられる。
+<div class="code">
+>git clone https://github.com/msugdr/aws2.git
+</div>
+コマンドラインからGitHubに新しいリポジトリを作成したりするためには "gh" とかいうのをインストールする必要があるらしい。
+            </p>
+            <h2>Google Map の埋め込み</h2>
+            <p>
+PCで必要な場所を GoogleMap で表示し、メニューから「リンクまたは埋め込み」を選び、
+ダイアログで「埋め込み」を選択してタグをコピーしてHTMLに貼り付ける。地図の表示の大きさはタグ内のwidth, height で変えられる。
+表示場所も緯度経度によっている。
+            </p>
+<center>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13123.678795229534!2d135.5157686!3d34.68197610000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1665961841339!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<p>
+自分でタグを書く方法だとスケールを変更したり、航空写真にしたりもできる。
+ピンも１本は立てられる。複数立てるには有料のAPIを使うことになるらしい。
+<div class="code">
+&lt;iframe src="https://maps.google.co.jp/maps?
+output=embed&t=k&hl=ja
+&z=15&ll=34.681976,135.51576
+&q=34.681976,135.51576" frameborder="0" scrolling="no" 
+width="600" height="450"></iframe>
+</div>
+</p>
+<iframe src="https://maps.google.co.jp/maps?output=embed&t=k&hl=ja&z=15&ll=34.681976,135.51576&q=34.681976,135.51576" frameborder="0" scrolling="no" width="600" height="450"></iframe>
 
 GitHub のウェブで公開用リポジトリを作成
 [Ripogitories] -> [New}
@@ -46,14 +68,14 @@ Amplify
 "Amplify Hosting"
 「使用を開始する」
 〇 GitHub を選択して「続行」
--------
+------
 とあるリージョンで最初に作成した時にのみ、GitHub認証許可ページが出て、許可すると、
 GitHub のSettingページへ行くが、２度目からは、
 AWS側で[View GitHub permission]をクリックするか、
 GitHubホームページで、右上のメニューから[Setting],
 左側メニューから [Application] AWS Amplify [Configuration]
 Select repository [save]
--------
+------
 リポジトリブランチの追加
 最近更新されたリポジトリの「更新マーク」をクリック
 ブランチを選択
@@ -67,3 +89,4 @@ Select repository [save]
         </main>
     </body>
 </html>
+</center>
