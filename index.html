@@ -7,63 +7,61 @@
     <head>
         <title>Beggin AWS</title>
         <style>
-            :root {--d: 0;}
+            :root {--d: 100;}
         </style>
     </head>
     <body>
-        <header>AWS Amplify 2</header>
+        <header>AWS Amplify 3</header>
         <main>
-            <h2>Local</h2>
-            <pre>
-フォルダーとファイルを用意して、そのフォルダー内に移動
-git init
-add *
-commit -m "aws"
+            <h2>GitHub</h2>
+            <p>
+コマンド一発でコピーを持ってこられる。
+<div class="code">
+>git clone https://github.com/msugdr/aws2.git
+</div>
+コマンドラインからGitHubに新しいリポジトリを作成したりするためには "gh" とかいうのをインストールする必要があるらしい。
+            </p>
+            <h2>Google Map の埋め込み</h2>
+            <p>
+PCで必要な場所を GoogleMap で表示し、メニューから「リンクまたは埋め込み」を選び、
+ダイアログで「埋め込み」を選択してタグをコピーしてHTMLに貼り付ける。地図の表示の大きさはタグ内のwidth, height で変えられる。
+表示場所も緯度経度によっている。
+            </p>
+<center>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13123.678795229534!2d135.5157686!3d34.68197610000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1665961841339!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<p>
+自分でタグを書く方法だとスケールを変更したり、航空写真にしたりもできる。
+ピンも１本は立てられる。複数立てるには有料のAPIを使うことになるらしい。
+<div class="code">
+&lt;iframe src="https://maps.google.co.jp/maps?
+output=embed&t=k&hl=ja
+&z=15&ll=34.681976,135.51576
+&q=34.681976,135.51576" frameborder="0" scrolling="no" 
+width="600" height="450"></iframe>
+</div>
+</p>
+<iframe src="https://maps.google.co.jp/maps?output=embed&t=k&hl=ja&z=15&ll=34.681976,135.51576&q=34.681976,135.51576" frameborder="0" scrolling="no" width="600" height="450"></iframe>
 
-GitHub のウェブで公開用リポジトリを作成
-[Ripogitories] -> [New}
-Repository name : aws1
-"Public" ("Private" でも構わない）
-
-git remote add origin https://github.com/msugdr/aws1.git
-git branch -M main
-現在のブランチの名前を変更する。
-デフォルトでは master だが、語感の問題から main に変える動きがある。
-[Create repository]
-
-git push -u origin main
-このコマンドでoriginにマスターブランチをpushし、
-ローカルブランチの上流がorigin masterへと移ることになる
--u と --set-upstream が同じ意味とのこと。
-このオプションをつけるとローカルリポジトリの現在のブランチの上流を
-origin master に規定したことにる。
-このオプションをつけると、次からは git push だけで上記のコマンドと同じことを実施できる。
-さらに、git pull だけでも git pull origin master と同じ意味になる。
-            </pre>
-            <h2>AWS Amplify</h2>
-            <pre>
-Amplify
-"Amplify Hosting"
-「使用を開始する」
-〇 GitHub を選択して「続行」
-------
-とあるリージョンで最初に作成した時にのみ、GitHub認証許可ページが出て、許可すると、
-GitHub のSettingページへ行くが、２度目からは、
-AWS側で[View GitHub permission]をクリックするか、
-GitHubホームページで、右上のメニューから[Setting],
-左側メニューから [Application] AWS Amplify [Configuration]
-Select repository [save]
-------
-リポジトリブランチの追加
-最近更新されたリポジトリの「更新マーク」をクリック
-ブランチを選択
-「次へ」をクリック
-アプリケーションの名前 : aws1_html
-自動デプロイ承諾にチェック
-「次へ」
-「保存してデプロイ」
-（検証）まですすめば完了
-            </pre>
+</center>
+<pre>
+ll（地図の中心位置）
+緯度経度によって地図の表示上の中心を指定することができます。
+t=m　地図
+t=k　航空写真
+t=h　地図＋航空写真
+t=p　地形図
+t=e　Google Eearth
+z（地図の縮尺）
+0から23までの整数で地図の拡大率（ズーム）を指定できます。
+マーカー（ピン）を立てる場合には、「q」というパラメータを使用します。
+</pre>
+<h3>Google My Map</h3>
+自分のGoogle Drive のアカウントで地図を作成して、このリンクを貼ることができる。
+ピンを複数立てたり、地図の表現もいろいろできる。
+ただし、アカウント名やアイコンがが表示される。
+<center>
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AWy5hImmbyrRxWnUdfse5NYD9sVwKHc&ehbc=2E312F" width="600" height="450"></iframe>
         </main>
     </body>
 </html>
+</center>
